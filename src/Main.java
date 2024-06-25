@@ -1,4 +1,5 @@
 import java.util.ConcurrentModificationException;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +15,14 @@ public class Main {
        StuedentComparisionDemo sdemp = new StuedentComparisionDemo();
 
        sdemp.testComparators();
+
+       SetDemo setDemo = new SetDemo();
+       setDemo.testHashSet();
+       setDemo.testLinkedHashSet();
+
+       MapDemo mapDemo = new MapDemo();
+       mapDemo.testHashMap();
+
 
     }
 }
