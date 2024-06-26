@@ -23,6 +23,11 @@ public class Main {
        MapDemo mapDemo = new MapDemo();
        mapDemo.testHashMap();
 
+       LambdaDemo lambdaDemo = new LambdaDemo();
+       lambdaDemo.testLambda();
+       lambdaDemo.testLambda1();
+       lambdaDemo.testJdkFunctionalInterfaces();
+
 
     }
 }
