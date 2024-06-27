@@ -27,6 +27,7 @@ public class Main {
        lambdaDemo.testLambda();
        lambdaDemo.testLambda1();
        lambdaDemo.testJdkFunctionalInterfaces();
+       lambdaDemo.testChainingLambdas();
 
 
     }

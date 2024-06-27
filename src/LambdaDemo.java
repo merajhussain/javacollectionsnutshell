@@ -1,9 +1,12 @@
+
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class LambdaDemo {
+
+
 
     public interface  compute{
 
@@ -53,11 +56,19 @@ public class LambdaDemo {
         Function<Integer,Integer> square = x->x*x;
 
         //Consumer FI takes one arguement and returns nothing
+        //Using lambdas
         Consumer<String> greeting = (name)->System.out.println("Hello "+name);
+
+        //Using method references
+        Consumer<String> greetingMethodReference = System.out::println;
+
+
         //Supplier FI takes no arguments but returns a value
         Supplier<Double>    pi= ()-> 3.14;
         //Predicate takes any number of arguments and returns true or false;
         Predicate<Integer> isEven=(x)->x%2==0;
+
+        
 
 
         Function<Integer,Double> areaCircle = (x)->pi.get()*x*x;
@@ -68,6 +79,20 @@ public class LambdaDemo {
 
         System.out.println(isEven.test(4));
 
+
+        greetingMethodReference.accept("hello meraj method reference");
+
+    }
+
+    void testChainingLambdas()
+    {
+          Function<Integer,Integer> increment = x->++x;
+          Function<Integer,Integer> squareIt = x ->x*x;
+
+
+          Function<Integer,Integer> chaining=increment.andThen(squareIt);
+
+          System.out.println(chaining.apply(2));
     }
 }
 
