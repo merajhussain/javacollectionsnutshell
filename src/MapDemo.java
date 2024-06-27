@@ -26,5 +26,6 @@ public class MapDemo {
 
         map.forEach((key,value)->System.out.println(value.getName()));
 
+
     }
 }
