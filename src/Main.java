@@ -34,7 +34,11 @@ public class Main {
         streamsDemo.simpleTest();
         streamsDemo.testHighestSalaryInDepartment();
 
+       ThreadDemo demo = new ThreadDemo();
+       // demo.testNumbersNoThreads();
 
+       // demo.testNumbers();
+        demo.threadStopTest();
 
     }
 }
