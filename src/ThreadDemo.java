@@ -102,7 +102,9 @@ public class ThreadDemo {
                           else
                           {
                               System.out.println("Stopping a thread as i was interruped 10 times");
+                              
                               Thread.currentThread().stop();
+
                           }
 
                       }
@@ -114,12 +116,15 @@ public class ThreadDemo {
 
 
            Thread t2= new Thread(()->{
-              while(true)
+              while(t1.getState() != Thread.State.TERMINATED)
               {
                   synchronized(this)
                   {
-                     // System.out.println("thread 2 running");
+
+                      System.out.println("thread 2 start , trying to interrupt thread 1 and Thread1 state before interruption:"+t1.getState());
+
                       t1.interrupt();
+                      System.out.println("thread 2 running , interrupted thread 1 and thread1 state is "+t1.getState());
 
                   }
 
