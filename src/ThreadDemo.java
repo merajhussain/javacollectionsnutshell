@@ -121,12 +121,14 @@ public class ThreadDemo {
                   synchronized(this)
                   {
 
-                      System.out.println("thread 2 start , trying to interrupt thread 1 and Thread1 state before interruption:"+t1.getState());
+
 
                       if(t1.getState()== Thread.State.TERMINATED){
+                          System.out.println("Thread1 terminated hence I am ending");
                           break;
                       }
 
+                      System.out.println("thread 2 start , trying to interrupt thread 1 and Thread1 state before interruption:"+t1.getState());
                       t1.interrupt();
                       System.out.println("thread 2 running , interrupted thread 1 and thread1 state is "+t1.getState());
 
