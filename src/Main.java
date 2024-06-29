@@ -30,6 +30,7 @@ public class Main {
        lambdaDemo.testChainingLambdas();
 
 
+
         StreamsDemo streamsDemo = new StreamsDemo();
         streamsDemo.simpleTest();
         streamsDemo.testHighestSalaryInDepartment();
@@ -39,6 +40,10 @@ public class Main {
 
        // demo.testNumbers();
         demo.threadStopTest();
+
+        ExecutorServiceDemo executorServiceDemo = new ExecutorServiceDemo();
+        executorServiceDemo.Testbasic();
+
 
     }
 }

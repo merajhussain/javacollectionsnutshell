@@ -1,5 +1,6 @@
 import java.awt.desktop.SystemEventListener;
 import java.util.*;
+import java.util.concurrent.locks.Lock;
 import java.util.stream.Collectors;
 
 public class StreamsDemo {
@@ -75,6 +76,7 @@ public class StreamsDemo {
                 .forEach((dept, emp) -> emp.ifPresent(e ->
                         System.out.println("Department: " + dept.getName() + ", Employee ID: " + e.getId() + ", Salary: " + e.getSalary())
                 ));
+
 
         System.out.println("================Maximum salary in each department=========================");
         // Find and print the maximum salary in each department using Java Streams

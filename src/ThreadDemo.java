@@ -14,9 +14,12 @@ public class ThreadDemo {
                for(long i=1;i<=50000000;i++){
                    try
                    {
+
                        al.add(i);
                    }catch (OutOfMemoryError e){
                        System.out.println("Out of memoery");
+
+
                    }
 
                }

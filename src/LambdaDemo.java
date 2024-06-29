@@ -89,10 +89,9 @@ public class LambdaDemo {
           Function<Integer,Integer> increment = x->++x;
           Function<Integer,Integer> squareIt = x ->x*x;
 
+          Function<Integer,Integer> incrementAndSquareIt=increment.andThen(squareIt);
+          
 
-          Function<Integer,Integer> chaining=increment.andThen(squareIt);
-
-          System.out.println(chaining.apply(2));
     }
 }
 
