@@ -1,3 +1,5 @@
+import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -8,32 +10,67 @@ public class ExecutorServiceDemo {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
 
 
+        //fixed thread pool
+        //single thread pool
+        //scheduled thread pool
+        //cache thread pool
+        //work stealing thread pool > Java 7
 
         AtomicInteger count= new AtomicInteger();
-        while(true)
-        {
 
-            if(count.get()>20){
-               executorService.shutdown();
-                break;
-            }
 
             executorService.execute(()->{
-                try {
-                    System.out.println("executing");
-                    Thread.sleep(5000);//every 5 seconds only three threads are executed
-                    synchronized (this){
-                        count.getAndIncrement();
+
+                synchronized (this){
+
+                    System.out.println("executing "+count.get()+" times");
+                    try {
+                        Thread.sleep(1000);//every 1 seconds only three threads are executed
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+
+
+                    count.getAndIncrement();
+                    if(count.get()>18){
+
+                        executorService.shutdown();
 
                     }
 
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+
                 }
+
             });
 
 
-        }
+
 
     }
-}
+
+    public void ScheduledThreadExecutor()   {
+        ScheduledExecutorService executorService =   Executors.newScheduledThreadPool(1);
+
+        AtomicInteger count= new AtomicInteger();
+        Runnable run = ()-> {
+
+
+
+           System.out.println("Task executed "+count.get());
+            count.getAndIncrement();
+            if(count.get()>5){
+
+                executorService.shutdown();
+
+            }
+
+        };
+        executorService.scheduleAtFixedRate(run,0,1,TimeUnit.SECONDS);
+
+
+
+
+
+        }
+    }
+

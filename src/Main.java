@@ -42,7 +42,12 @@ public class Main {
         demo.threadStopTest();
 
         ExecutorServiceDemo executorServiceDemo = new ExecutorServiceDemo();
-        executorServiceDemo.Testbasic();
+        //executorServiceDemo.Testbasic();
+        executorServiceDemo.ScheduledThreadExecutor();
+
+        FutureDemo futureDemo = new FutureDemo();
+
+        futureDemo.basicFutureUsage();
 
 
     }
