@@ -7,16 +7,12 @@ public class FutureDemo {
         private Future<Integer> f;
         ExecutorService executorService;
         public MyThread(Future<Integer> f,ExecutorService executorService){
-
-
             this.f = f;
             this.executorService  = executorService;
         }
         @Override
         public void run() {
-
             while(true){
-
                   if(this.f.isDone()){
                       try {
                           System.out.println("Future is computed:"+f.get());
@@ -54,4 +50,6 @@ public class FutureDemo {
 
 
     }
+
+    
 }

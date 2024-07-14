@@ -49,6 +49,11 @@ public class Main {
 
         futureDemo.basicFutureUsage();
 
+        Integer i= 20;
+
+        StringBuilder sb = new StringBuilder();
+        
+
 
     }
 }

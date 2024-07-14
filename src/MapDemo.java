@@ -9,7 +9,7 @@ public class MapDemo {
         map.put(1,new Student(1,4,6,"meraj"));
         map.put(2,new Student(2,5,7,"afeef"));
         map.put(3,new Student(3,6,8,"atheeb"));
-
+      
        for(Integer key : map.keySet()){
            System.out.println(key);
        }
