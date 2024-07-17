@@ -106,5 +106,23 @@ public class StreamsDemo {
         System.out.println("===============Employees in ascending order=========================");
 
         employeeHashMap.values().stream().sorted(Employee::compareTo).forEach(System.out::println);
+
+
+
+        Map<Integer,Integer> mp = new HashMap<>();
+        List<Integer> li= List.of(1,2,3,3,4,5,5,6);
+
+        li.stream().forEach(val->{
+            if (mp.containsKey(val)) {
+
+                int v=mp.get(val);
+                mp.replace(val,++v);
+            }else{
+                mp.put(val,1);
+            }
+        });
+
+        mp.forEach((k,v)->System.out.println(v));
+
     }
 }
