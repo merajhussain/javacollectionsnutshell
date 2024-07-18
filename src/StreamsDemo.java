@@ -112,6 +112,7 @@ public class StreamsDemo {
         Map<Integer,Integer> mp = new HashMap<>();
         List<Integer> li= List.of(1,2,3,3,4,5,5,6);
 
+
         li.stream().forEach(val->{
             if (mp.containsKey(val)) {
 
@@ -123,6 +124,24 @@ public class StreamsDemo {
         });
 
         mp.forEach((k,v)->System.out.println(v));
+
+    }
+
+    void testMapFlatMap(){
+
+        List<List<String>> nestedList = Arrays.asList(
+                Arrays.asList("John", "Jane"),
+                Arrays.asList("Jack", "Jill")
+        );
+
+              nestedList.stream()
+                .flatMap(List::stream) // flattens the nested lists
+                      .forEach(System.out::println);
+
+
+        List<String> list = List.of("John","Jane","Jack","Jill");
+
+        list.stream().map(e->e.toUpperCase()).forEach(System.out::println);
 
     }
 }
