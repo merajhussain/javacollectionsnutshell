@@ -110,7 +110,7 @@ public class StreamsDemo {
 
 
         Map<Integer,Integer> mp = new HashMap<>();
-        List<Integer> li= List.of(1,2,3,3,4,5,5,6);
+         List<Integer> li= List.of(1,2,3,3,4,5,5,6);
 
 
         li.stream().forEach(val->{
@@ -141,7 +141,7 @@ public class StreamsDemo {
 
         List<String> list = List.of("John","Jane","Jack","Jill");
 
-        list.stream().map(e->e.toUpperCase()).forEach(System.out::println);
+        list.stream().map(String::toUpperCase).forEach(System.out::println);
 
     }
 }
