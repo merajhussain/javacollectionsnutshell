@@ -1,8 +1,5 @@
 
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class LambdaDemo {
 
@@ -81,6 +78,10 @@ public class LambdaDemo {
 
 
         greetingMethodReference.accept("hello meraj method reference");
+
+        BiPredicate<Integer,Integer> bipredicate = (var x,var y)->  x>y;
+
+        System.out.println(bipredicate.test(2,4));
 
     }
 
