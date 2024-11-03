@@ -34,6 +34,8 @@ class MyTrie{
              cur = cur.children[insertIndex];
 
         }
+        cur.endOfWord = true;
+        cur.prefixCount++;
 
     }
 
@@ -97,7 +99,7 @@ public class TrieDemo {
 
     }
 
-    public void test2StartsWithCount()
+    public static void test2StartsWithCount()
     {
         MyTrie myTrie = new MyTrie();
         myTrie.insert("meraj");
@@ -119,6 +121,6 @@ public class TrieDemo {
 
          testInsertSearch();
          test1StartsWithCount();
-         test1StartsWithCount();
+         test2StartsWithCount();
     }
 }
