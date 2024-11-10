@@ -1,3 +1,5 @@
+package designpatterns;
+
 import java.lang.reflect.Constructor;
 
 class Singleton {
